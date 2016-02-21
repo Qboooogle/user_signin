@@ -1,0 +1,30 @@
+extends layout
+
+block header
+	if signedIn
+		a.jump(href='/detail') User Info
+	else
+		a.jump(href='/signin') Sign In
+
+block content
+	#main_content.signup
+		h1 Sign Up
+		form(action='/signup', method='post')
+			.form
+				input.textfield(type='text', name='name', placeholder='Username')
+			.form
+				input.textfield(type='password', name='pwd', placeholder='Password')
+			.form
+				input.textfield(type='password', name='rpwd', placeholder='Repeat your password')
+			.form
+				input.textfield(type='text', name='sid', placeholder='Student ID')
+			.form
+				input.textfield(type='text', name='tel', placeholder='Telphone number')
+			.form
+				input.textfield(type='text', name='email', placeholder='E-mail address')
+			.form
+				input#reset.button(type='reset', name='reset', value='Reset')
+			.form
+				input#submit.button(disabled='disabled', type='submit', name='submit', value='Sign Up')
+	script(type='text/javascript' src='/javascripts/signup.js')
+	script(type='text/javascript' src='/javascripts/validator.js')

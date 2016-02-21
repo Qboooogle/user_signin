@@ -1,0 +1,22 @@
+extends layout
+
+block header
+	a.jump(href='/logout') Log Out
+	a.jump(href='/signup') Sign Up
+
+block content
+	#main_content.detail
+		h1 User Detail
+		.detail
+			span.head Name:
+			span #{user.name}
+		.detail
+			span.head ID:
+			span #{user.sid}
+		.detail
+			span.head Tel:
+			span #{user.tel}
+		.detail
+			span.head E-mail:
+			span #{user.email}
+			
